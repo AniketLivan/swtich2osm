@@ -1,0 +1,12 @@
+[Unit]
+Description=Renderd
+After=network.target auditd.service
+
+[Service]
+Type=forking
+ExecStart=/etc/init.d/renderd start
+ExecReload=/etc/init.d/renderd restart
+ExecStop=/etc/init.d/renderd stop
+
+[Install]
+WantedBy=multi-user.target
